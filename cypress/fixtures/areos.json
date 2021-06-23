@@ -1,0 +1,9 @@
+{
+    "baseUrl": "https://aros.pl/",
+    "findBooksWithRower": "rower",
+    "resultsForRower": "rower (203)",
+    "noBooksSearchString": "aaaaaddddd",
+    "resultsForNoBooksSearch": "aaaaaddddd (0)",
+    "emptySearchString": "",
+    "resultforEmptyString": "Zaawansowane wyszukiwanie"
+}
