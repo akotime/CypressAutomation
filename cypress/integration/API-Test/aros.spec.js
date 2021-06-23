@@ -1,6 +1,12 @@
 describe('Searchbox in bonito.pl book shop', () => {
+    beforeEach('Go to the aros.pl book shop', () => {
+        cy.fixture('areos').then(areos => {
+            const baseURL = areos.baseUrl
+            cy.visit(baseURL)
+        })
+    })
+
     it('Validate the number of found books (intercept)', () => {
-        cy.visit('https://aros.pl/')
 
         cy.intercept('GET', '/szukaj/*/*').as('loadFoundBooks')
 
@@ -16,7 +22,6 @@ describe('Searchbox in bonito.pl book shop', () => {
     })
 
     it('Validate that the number of founded books is zero (intercept)', () => {
-        cy.visit('https://aros.pl/')
 
         cy.intercept('GET', '/szukaj/*/*').as('loadFoundBooks')
 
@@ -34,8 +39,7 @@ describe('Searchbox in bonito.pl book shop', () => {
     })
 
     it('Validate that empty search string returns advanced searching (intercept)', () => {
-        cy.visit('https://aros.pl/')
-
+        
         cy.intercept('GET', '/zaawansowane').as('loadFoundBooks')
 
         cy.fixture('areos').then(areos => {
