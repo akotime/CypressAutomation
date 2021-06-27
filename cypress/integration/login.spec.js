@@ -8,16 +8,13 @@ describe('Login/Logout test in Zero Bank', () => {
     it('Try to login with valid data', () => {
         cy.get('#login_form').should('be.visible')
 
-        //cy.fixture('user').then(user => {
-            
-            const username = Cypress.env('USERNAME_ZERO')
-            const password = Cypress.env('PASSWORD_ZERO')
+        const username = Cypress.env('USERNAME_ZERO')
+        const password = Cypress.env('PASSWORD_ZERO')
 
-            cy.get('#user_login').type(username)
-            cy.get('#user_password').type(password)
-            cy.contains('Sign in').click()
-        //})
-        
+        cy.get('#user_login').type(username)
+        cy.get('#user_password').type(password)
+        cy.contains('Sign in').click()
+                
         cy.url().should('include','account-summary.html')
         cy.contains('Account Summary').should('be.visible')
     });

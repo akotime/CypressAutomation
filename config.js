@@ -1,0 +1,11 @@
+export const baseUrl = 'http://zero.webappsecurity.com/index.html'
+export const login_username = 'username'
+export const login_password = 'password'
+export const searchingStringAccount = 'account'
+export const searchingStringJakisTekst = 'jakis tekst'
+export const searchingStringEmpty = ''
+export const selectorReturnsElementOfSearch = '.top_offset ul a'
+export const resultsNumberForAccountInSearch = 2
+export const noElementsFoundBySearch = 'No results were found'
+export const resultsNumberForEmptyStringInSearch = 12
+export const defaultElementsFoundBySearchEmptyString = 'The following pages were found'

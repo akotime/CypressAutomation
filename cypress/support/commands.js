@@ -23,3 +23,19 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('isVisible', selector => {
+    cy.get(selector).should('be.visible')
+})
+
+Cypress.Commands.add('isHidden', selector => {
+    cy.get(selector).should('not.exist')
+})
+
+Cypress.Commands.add('login', (username, password) => {
+    cy.get('#login_form').should('be.visible')
+    cy.get('#user_login').type(username)
+    cy.get('#user_password').type(password)
+    cy.contains('Sign in').click()
+})
+
